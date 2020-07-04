@@ -1,0 +1,16 @@
+{
+    "name": "pqr/php-project-lvl1",
+    "description": "Hexlet learning project 1",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Petr Myazin",
+            "email": "petr.myazin@gmail.com"
+        }
+    ],
+    "bin": [
+        "bin/brain-games"
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
