@@ -1,14 +1,13 @@
 <?php
 
-namespace Brain\Calc;
+namespace Brain\Games\Calc;
 
-use function cli\line;
-use function cli\prompt;
+use function Brain\Engine\runGame;
+
+use const Brain\Constants\ROUNDS_COUNT;
 
 const MIN_RAND_NUMBER = 0;
 const MAX_RAND_NUMBER = 100;
-const ROUNDS = 3;
-
 const OPERATORS = ['+', '-', '*'];
 
 function calc($operator, $number1, $number2)
@@ -27,24 +26,18 @@ function calc($operator, $number1, $number2)
 
 function runGameCalc()
 {
-    line('Welcome to the Brain Games!');
-    line('What is the result of the expression?');
-    $name = prompt('May I have your name?');
-    line("Hello, $name!");
+    $introduction = 'What is the result of the expression?';
+    $gameData = [];
 
-    for ($round = 0; $round < ROUNDS; $round++) {
+    for ($round = 0; $round < ROUNDS_COUNT; $round++) {
         $number1 = random_int(MIN_RAND_NUMBER, MAX_RAND_NUMBER);
         $number2 = random_int(MIN_RAND_NUMBER, MAX_RAND_NUMBER);
         $operator = OPERATORS[array_rand(OPERATORS)];
+        $question = "$number1 $operator $number2";
         $correctAnswer = (string)calc($operator, $number1, $number2);
-        line("Question: $number1 $operator $number2");
-        $answer = prompt('Your answer');
-        if ($answer !== $correctAnswer) {
-            line("'$answer' is wrong answer ;(. Correct answer is '$correctAnswer'.");
-            line("Let's try again, Sam!");
-            return;
-        }
 
-        line('Correct!');
+        $gameData[] = [$question, $correctAnswer];
     }
+
+    runGame($introduction, $gameData);
 }

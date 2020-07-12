@@ -17,8 +17,10 @@
     },
     "autoload": {
         "files": [
-            "src/Even.php",
-            "src/Calc.php"
+            "src/Games/Even.php",
+            "src/Games/Calc.php",
+            "src/Constants.php",
+            "src/Engine.php"
         ]
     },
     "require-dev": {

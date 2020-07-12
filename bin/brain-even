@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function Brain\Even\runGameEven;
+use function Brain\Games\Even\runGameEven;
 
 $global = __DIR__ . '/../../../autoload.php';
 if (file_exists($global)) {
