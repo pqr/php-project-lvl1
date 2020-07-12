@@ -1,0 +1,44 @@
+<?php
+
+namespace Brain\Games\Progression;
+
+use function Brain\Engine\runGame;
+
+use const Brain\Constants\ROUNDS_COUNT;
+
+const MIN_RAND_START = 1;
+const MAX_RAND_START = 50;
+const MIN_RAND_STEP = 2;
+const MAX_RAND_STEP = 15;
+const PROGRESSION_LENGTH = 10;
+
+const INTRODUCTION = 'What number is missing in the progression?';
+
+function generateProgression()
+{
+    $progression = [];
+    $start = random_int(MIN_RAND_START, MAX_RAND_START);
+    $step = random_int(MIN_RAND_STEP, MAX_RAND_STEP);
+    for ($i = 0; $i < PROGRESSION_LENGTH; $i++) {
+        $progression[] = $start + $i * $step;
+    }
+    return $progression;
+}
+
+function runGameProgression()
+{
+    $gameData = [];
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
+        $progression = generateProgression();
+        $hiddenElementIndex = array_rand($progression);
+
+        $correctAnswer = (string)$progression[$hiddenElementIndex];
+
+        $progression[$hiddenElementIndex] = '..';
+        $question = implode(' ', $progression);
+
+        $gameData[] = [$question, $correctAnswer];
+    }
+
+    runGame(INTRODUCTION, $gameData);
+}

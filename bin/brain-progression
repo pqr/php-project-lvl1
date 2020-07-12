@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+use function Brain\Games\Progression\runGameProgression;
+
+$global = __DIR__ . '/../../../autoload.php';
+if (file_exists($global)) {
+    require_once $global;
+} else {
+    require_once __DIR__ . '/../vendor/autoload.php';
+}
+
+runGameProgression();
+
