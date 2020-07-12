@@ -10,6 +10,8 @@ const MIN_RAND_NUMBER = 0;
 const MAX_RAND_NUMBER = 100;
 const OPERATORS = ['+', '-', '*'];
 
+const INTRODUCTION = 'What is the result of the expression?';
+
 function calc($operator, $number1, $number2)
 {
     switch ($operator) {
@@ -26,9 +28,7 @@ function calc($operator, $number1, $number2)
 
 function runGameCalc()
 {
-    $introduction = 'What is the result of the expression?';
     $gameData = [];
-
     for ($round = 0; $round < ROUNDS_COUNT; $round++) {
         $number1 = random_int(MIN_RAND_NUMBER, MAX_RAND_NUMBER);
         $number2 = random_int(MIN_RAND_NUMBER, MAX_RAND_NUMBER);
@@ -39,5 +39,5 @@ function runGameCalc()
         $gameData[] = [$question, $correctAnswer];
     }
 
-    runGame($introduction, $gameData);
+    runGame(INTRODUCTION, $gameData);
 }

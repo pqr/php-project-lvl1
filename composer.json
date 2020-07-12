@@ -19,6 +19,7 @@
         "files": [
             "src/Games/Even.php",
             "src/Games/Calc.php",
+            "src/Games/Gcd.php",
             "src/Constants.php",
             "src/Engine.php"
         ]
