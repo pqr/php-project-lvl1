@@ -17,10 +17,15 @@ function runGameEven()
     for ($round = 0; $round < ROUNDS_COUNT; $round++) {
         $number = random_int(MIN_RAND_NUMBER, MAX_RAND_NUMBER);
         $question = (string)$number;
-        $correctAnswer = $number % 2 === 0 ? 'yes' : 'no';
+        $correctAnswer = isEven($number) ? 'yes' : 'no';
 
         $gameData[] = [$question, $correctAnswer];
     }
 
     runGame(INTRODUCTION, $gameData);
+}
+
+function isEven($number)
+{
+    return $number % 2 === 0;
 }
