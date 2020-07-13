@@ -1,4 +1,4 @@
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/pqr/php-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/768fe6d9cd9243b03429/maintainability" /></a>
 
 <img src="https://github.com/pqr/php-project-lvl1/workflows/lint/badge.svg">
 
