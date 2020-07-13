@@ -27,7 +27,6 @@ function runGameProgression()
 {
     $gameData = [];
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-
         $start = random_int(MIN_RAND_START, MAX_RAND_START);
         $step = random_int(MIN_RAND_STEP, MAX_RAND_STEP);
 
