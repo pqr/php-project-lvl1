@@ -1,6 +1,6 @@
 <a href="https://codeclimate.com/github/pqr/php-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/768fe6d9cd9243b03429/maintainability" /></a>
 
-<img src="https://github.com/pqr/php-project-lvl1/workflows/lint/badge.svg">
+<a href="https://github.com/pqr/php-project-lvl1/actions"><img src="https://github.com/pqr/php-project-lvl1/workflows/lint/badge.svg"></a>
 
 # Brain Games
 Educational project from Hexlet.io
